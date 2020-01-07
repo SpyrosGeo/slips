@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Slip</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="text-center">Dating Issues</h1>
+  </header>
+  <div class=" main text-center">
+  <div id="counter">
+    <h2>Days Since Last Incident:</h2>
+    <div>
+      <p id="days"></p>
+    </div>
+    <div>
+      <p id="last-incident"></p>
+    </div>
+    <div>
+      <p id="">Previous Period: <span id="record"></span><p>
+          <p>All Time Record: 0<p>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script>
+  var todayRaw = new Date();
+    var todayYY = todayRaw.getFullYear();
+    var todayMM = todayRaw.getMonth();
+    var todayDD = todayRaw.getDate();
+    var today = new Date(todayYY, todayMM, todayDD);
+    var incident = new Date(2020, 00, 07); //YYYY, MM, DD //month counts from 00 i.e may = 04 not 05
+                                  //
+
+    var difference = Math.round((today - incident) / (1000 * 60 * 60 * 24));
+    console.log(today)
+    console.log(incident)
+    // if(difference <0){
+    //   difference = 0;
+    // }
+    document.querySelector('#days').innerHTML = difference;
+    document.querySelector('#record').innerHTML = difference;
+//document.querySelector('#last-incident').innerHTML = incident;
+// Use the above line to show last incident. Need to code the formatting first
+  </script>
+</body>
+
+</html>
